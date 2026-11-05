@@ -56,7 +56,14 @@ The TF-IDF model labels most negative reviews as positive because there are twic
 pip install nltk scikit-learn pandas numpy gensim beautifulsoup4 lxml tqdm jupyter
 ```
 
-The notebooks download the NLTK data they need with `nltk.download(...)`. That includes `punkt`, `stopwords`, `wordnet`, `averaged_perceptron_tagger`, `maxent_ne_chunker` and `words`.
+Most notebooks download the NLTK data they need with `nltk.download(...)`: `stopwords`, `wordnet`, `omw-1.4`, `averaged_perceptron_tagger_eng`, `maxent_ne_chunker_tab` and `words`.
+
+`tokenization.ipynb` doesn't download its tokenizer data, so run this once before opening it:
+
+```python
+import nltk
+nltk.download('punkt_tab')
+```
 
 The pretrained Google News Word2Vec model is about 1.6 GB. Gensim downloads it the first time you run `api.load('word2vec-google-news-300')`.
 
